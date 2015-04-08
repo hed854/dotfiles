@@ -1,0 +1,8 @@
+[user]
+	name = hed
+	email = hed854@users.noreply.github.com
+[alias]
+	st = status -s
+	recent = log --oneline --decorate -n 10
+[color]
+	ui = auto
