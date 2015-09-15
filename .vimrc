@@ -13,7 +13,7 @@ filetype plugin indent on
 " Colors
 set t_Co=256
 syntax enable
-colorscheme desertEx
+colorscheme elflord
 set background=dark
 
 " Log mode 
@@ -45,6 +45,9 @@ execute pathogen#infect()
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
+
+" Lightline
+set laststatus=2
 
 " Markdown folding
 function! MarkdownLevel()
