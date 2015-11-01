@@ -6,3 +6,5 @@
 	recent = log --oneline --decorate -n 10
 [color]
 	ui = auto
+[core]
+	editor = vim
