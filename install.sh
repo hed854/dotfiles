@@ -12,7 +12,7 @@ vim_dir="$home_dir/.vim"
 git_install()
 {
 	install_dir=$(echo $1 | cut -d'/' -f5-)
-	if [ -d $install_dir ]; then
+	if [ ! -d "$vim_dir/bundle/$install_dir" ]; then
  		echo "Installing $install_dir"
  		cd $vim_dir/bundle
  		git clone $1
@@ -20,6 +20,10 @@ git_install()
 		echo "  - $install_dir... OK!"
 	fi
 }
+# scratch
+# install from scratch
+# install new packages
+# change mode writing/code
 
 echo "Backup old files"
 mkdir -p ~/$backup_dir
@@ -49,5 +53,9 @@ fi
 echo "Installing plugins:"
 git_install "https://github.com/scrooloose/nerdtree"
 git_install "https://github.com/itchyny/lightline.vim"
+git_install "https://github.com/tpope/vim-markdown"
+git_install "https://github.com/nelstrom/vim-markdown-folding"
+echo "Installing themes:"
 git_install "https://github.com/vim-scripts/desertEx"
 git_install "https://github.com/vim-scripts/256-grayvim"
+git_install "https://github.com/andrwb/vim-lapis256"
