@@ -43,9 +43,6 @@ com! WM call WritingMode()
 " Pathogen
 execute pathogen#infect()
 
-" Nerdtree
-map <C-n> :NERDTreeToggle<CR>
-
 " Lightline
 set laststatus=2
 
