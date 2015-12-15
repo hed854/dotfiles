@@ -67,6 +67,7 @@ autocmd FileType php setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType ant setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType xml setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType cpp setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd FileType json setlocal expandtab softtabstop=4 shiftwidth=4
 
 "" Tab switch
 nnoremap td :tabclose<CR>
