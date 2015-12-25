@@ -74,3 +74,6 @@ nnoremap td :tabclose<CR>
 nnoremap tn :tabnext<CR>
 nnoremap tb :tabprevious<CR>
 nnoremap tt :tabnew<CR>
+
+"" Gvim
+set guifont=Droid_Sans_Mono:h10:cANSI
