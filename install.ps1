@@ -1,6 +1,3 @@
-# In powershell console: 
-# - ./install.ps1 -home_dir "myhomedir" -7z_exe "7z executable"
-
 # Input parameters
 Param(
 	[Parameter(Mandatory=$true)][string]$home_dir,
