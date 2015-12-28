@@ -1,14 +1,13 @@
-" General interface
+" General options
+set encoding=utf-8
 set ruler
 set nu
+filetype plugin indent on
 
 " Searching
 set hlsearch
 set ignorecase
 set incsearch
-
-" Indentation
-filetype plugin indent on
 
 " Colors
 set t_Co=256
@@ -77,3 +76,4 @@ nnoremap tt :tabnew<CR>
 
 "" Gvim
 set guifont=Droid_Sans_Mono:h10:cANSI
+set backspace=2
