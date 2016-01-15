@@ -71,6 +71,7 @@ Zip-Install "https://github.com/tpope/vim-markdown" "$vim_bundle_dir" $7z_exe
 Zip-Install "https://github.com/nelstrom/vim-markdown-folding" "$vim_bundle_dir" $7z_exe
 Zip-Install "https://github.com/octol/vim-cpp-enhanced-highlight" "$vim_bundle_dir" $7z_exe
 Zip-Install "https://github.com/elzr/vim-json" "$vim_bundle_dir" $7z_exe
+Zip-Install "https://github.com/hdima/python-syntax" "$vim_bundle_dir" $7z_exe
 
 Write-Host "Installing themes:"
 Zip-Install "https://github.com/vim-scripts/desertEx" "$vim_bundle_dir" $7z_exe
