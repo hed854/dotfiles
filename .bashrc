@@ -40,4 +40,4 @@ function parse_git_dirty()
 	fi
 }
 
-export PS1="${GREEN}[\u@\h:\W]${RESET}\`parse_git_branch\`${GREEN}\$${RESET} "
+export PS1="\[${GREEN}\][\u@\h:\W]\[${RESET}\]\[\`parse_git_branch\`\]\[${GREEN}\]\$\[${RESET}\] "

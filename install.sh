@@ -20,20 +20,25 @@ git_install()
 		echo "  - $install_dir... OK!"
 	fi
 }
-# scratch
-# install from scratch
-# install new packages
-# change mode writing/code
 
 echo "Backup old files"
 mkdir -p ~/$backup_dir
-mv ~/.vimrc ~/$backup_dir/.vimrc
-mv ~/.gitconfig ~/$backup_dir/.gitconfig
+if [[ -f ~/.vimrc ]]; then
+	mv ~/.vimrc ~/$backup_dir/.vimrc
+fi
+if [[ -f ~/.gitconfig ]]; then
+	mv ~/.gitconfig ~/$backup_dir/.gitconfig
+fi
+if [[ -f ~/.bashrc ]]; then
+	mv ~/.bashrc ~/$backup_dir/.bashrc
+fi
 
 echo "Copying .vimrc"
 cp .vimrc ~/.vimrc
 echo "Copying .gitconfig"
 cp .gitconfig ~/.gitconfig
+echo "Copying .bashrc"
+cp .bashrc ~/.bashrc
 
 
 if [ ! -d $vim_dir ];then
