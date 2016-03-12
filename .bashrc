@@ -5,10 +5,10 @@ eval "`dircolors`"
 alias ll='ls $LS_OPTIONS -l'
 
 # Fancy colors
-GREEN="$(tput setaf 2)"
-RESET="$(tput sgr0)"
-RED="$(tput setaf 1)"
-GRAY="$(tput setaf 7)"
+GREEN="\e[32m"
+RESET="\e[39m"
+RED="\e[31m"
+GRAY="\e[37m"
 
 # get current branch in git repo
 function parse_git_branch() 
@@ -18,9 +18,9 @@ function parse_git_branch()
 	then
 		STAT=`parse_git_dirty`
 		if [[ $STAT == "modified" ]];then
-			echo "${RED}(${BRANCH})${RESET}"
+			echo -e "${RED}(${BRANCH})${RESET}"
 		else
-			echo "${GRAY}(${BRANCH})${RESET}"
+			echo -e "${GRAY}(${BRANCH})${RESET}"
 		fi
 	else
 		echo ""
