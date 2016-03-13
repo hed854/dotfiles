@@ -5,10 +5,10 @@ eval "`dircolors`"
 alias ll='ls $LS_OPTIONS -l'
 
 # Fancy colors
-GREEN="\e[32m"
-RESET="\e[39m"
-RED="\e[31m"
-GRAY="\e[37m"
+GREEN="\[\033[0;32m\]"
+RESET="\[\033[0m\]"
+RED="\[\033[0;31m\]"
+GRAY="\[\033[0;37m\]"
 
 # get current branch in git repo
 function parse_git_branch() 
@@ -40,4 +40,9 @@ function parse_git_dirty()
 	fi
 }
 
-export PS1="\[${GREEN}\][\u@\h:\W]\[${RESET}\]\[\`parse_git_branch\`\]\[${GREEN}\]\$\[${RESET}\] "
+function set_prompt()
+{
+	PS1="${GREEN}[\u@\h:\W]${RESET}$(parse_git_branch)${GREEN}\$${RESET} "
+}
+
+PROMPT_COMMAND=set_prompt
