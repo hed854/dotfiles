@@ -39,6 +39,8 @@ echo "Copying .gitconfig"
 cp .gitconfig ~/.gitconfig
 echo "Copying .bashrc"
 cp .bashrc ~/.bashrc
+echo "Copying diffwrap"
+cp diffwrap.sh ~/diffwrap.sh
 
 
 if [ ! -d $vim_dir ];then
