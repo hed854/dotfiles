@@ -80,3 +80,6 @@ nnoremap tt :tabnew<CR>
 "" Gvim
 set guifont=Droid_Sans_Mono:h10:cANSI
 set backspace=2
+
+"" elzr/json conceal disable
+let g:vim_json_syntax_conceal = 0
