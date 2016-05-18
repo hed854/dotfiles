@@ -2,6 +2,7 @@
 set encoding=utf-8
 set ruler
 set nu
+set relativenumber
 filetype plugin indent on
 
 " Searching
