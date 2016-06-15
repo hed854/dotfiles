@@ -60,8 +60,6 @@ fi
 echo "Installing plugins:"
 git_install "https://github.com/jeetsukumaran/vim-filebeagle"
 git_install "https://github.com/itchyny/lightline.vim"
-git_install "https://github.com/tpope/vim-markdown"
-git_install "https://github.com/nelstrom/vim-markdown-folding"
 git_install "https://github.com/octol/vim-cpp-enhanced-highlight"
 git_install "https://github.com/elzr/vim-json"
 git_install "https://github.com/hdima/python-syntax"
