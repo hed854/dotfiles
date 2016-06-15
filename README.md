@@ -14,6 +14,6 @@
 * You must have 7zip installed on your system
 
 ```
-./install.ps1 -home_dir "c:/home/dir" -7z_exe "c:/7zip.exe"
+./install.ps1 "c:/home/dir" "c:/7zip.exe"
 
 ```
