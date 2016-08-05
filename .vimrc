@@ -11,7 +11,7 @@ set incsearch
 " Colors
 set t_Co=256
 syntax enable
-colorscheme elflord
+colorscheme PaperColor
 set background=dark
 
 " Pathogen
