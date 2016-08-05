@@ -69,7 +69,8 @@ Zip-Install "https://github.com/jeetsukumaran/vim-filebeagle" "$vim_bundle_dir" 
 Zip-Install "https://github.com/itchyny/lightline.vim" "$vim_bundle_dir" $7z_exe
 
 Write-Host "Installing themes:"
-Zip-Install "https://github.com/fugalh/desert.vim" "$vim_bundle_dir" $7z_exe
+Zip-Install "https://github.com/ciaranm/inkpot" "$vim_bundle_dir" $7z_exe
+Zip-Install "https://github.com/altercation/vim-colors-solarized" "$vim_bundle_dir" $7z_exe
 Zip-Install "https://github.com/vim-scripts/256-grayvim" "$vim_bundle_dir" $7z_exe
 Zip-Install "https://github.com/morhetz/gruvbox" "$vim_bundle_dir" $7z_exe
 Zip-Install "https://github.com/NLKNguyen/papercolor-theme" "$vim_bundle_dir" $7z_exe
