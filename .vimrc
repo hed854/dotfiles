@@ -8,12 +8,6 @@ set hlsearch
 set ignorecase
 set incsearch
 
-" Colors
-set t_Co=256
-syntax enable
-colorscheme PaperColor
-set background=dark
-
 " Pathogen
 execute pathogen#infect()
 
@@ -23,3 +17,9 @@ set laststatus=2
 "" Gvim
 set guifont=Droid_Sans_Mono:h10:cANSI
 set backspace=2
+
+" Colors
+set t_Co=256
+syntax enable
+colorscheme PaperColor
+set background=dark
