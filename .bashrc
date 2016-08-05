@@ -4,7 +4,6 @@ eval "`dircolors`"
 
 # alias
 alias ll='ls $LS_OPTIONS -l'
-alias svnvdiff='svn diff --diff-cmd ~/diffwrap.sh'
 
 # Fancy colors
 GREEN="\[\033[0;32m\]"

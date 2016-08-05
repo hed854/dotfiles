@@ -1,5 +1,7 @@
 # dotfiles
 
+The minimal config is useful to learn about dotfiles... i guess
+
 ## Installation
 
 **Linux:**
@@ -17,3 +19,4 @@
 ./install.ps1 "c:/home/dir" "c:/7zip.exe"
 
 ```
+
