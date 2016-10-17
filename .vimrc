@@ -10,10 +10,13 @@ set hlsearch
 set ignorecase
 set incsearch
 
+" Pathogen
+execute pathogen#infect()
+
 " Colors
 set t_Co=256
 syntax enable
-colorscheme elflord
+colorscheme PaperColor
 set background=dark
 
 " Log mode 
@@ -24,11 +27,27 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %a %H:%M")<CR>
 nnoremap <space>n :bn<CR>
 nnoremap <space>b :bp<CR>
 
-" Pathogen
-execute pathogen#infect()
-
 " Lightline
 set laststatus=2
+
+" Markdown folding
+function! MarkdownLevel()
+	if getline(v:lnum) =~ '^# .*$'
+		return ">1"
+	endif
+	if getline(v:lnum) =~ '^## .*$'
+		return ">2"
+	endif
+	if getline(v:lnum) =~ '^### .*$'
+		return ">3"
+	endif
+	return "=" 
+endfunction
+au BufEnter *.markdown setlocal foldexpr=MarkdownLevel()  
+au BufEnter *.markdown setlocal foldmethod=expr
+
+" Markdown filetype
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 "" Ftplugin
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -39,6 +58,7 @@ autocmd FileType cpp setlocal noexpandtab tabstop=4 shiftwidth=4
 autocmd FileType json setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType python setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType html setlocal expandtab softtabstop=4 shiftwidth=4
+autocmd FileType markdown setlocal expandtab softtabstop=4 shiftwidth=4
 let python_highlight_all = 1
 
 "" Tab switch
