@@ -10,6 +10,7 @@ alias svnvdiff='svn diff --diff-cmd ~/diffwrap.sh'
 GREEN="\[\033[0;32m\]"
 RESET="\[\033[0m\]"
 RED="\[\033[0;31m\]"
+CYAN="\[\033[0;36m\]"
 GRAY="\[\033[0;37m\]"
 
 # get current branch in git repo
