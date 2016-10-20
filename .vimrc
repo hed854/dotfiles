@@ -49,6 +49,9 @@ au BufEnter *.markdown setlocal foldmethod=expr
 " Markdown filetype
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+" Ngnix filetype
+autocmd BufNewFile,BufreadPost /etc/nginx/*,/usr/local/nginx/conf/* set filetype=nginx
+
 "" Ftplugin
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd FileType php setlocal expandtab softtabstop=4 shiftwidth=4
@@ -59,6 +62,7 @@ autocmd FileType json setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType python setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType html setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType markdown setlocal expandtab softtabstop=4 shiftwidth=4
+
 let python_highlight_all = 1
 
 "" Tab switch
