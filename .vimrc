@@ -62,6 +62,7 @@ autocmd FileType json setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType python setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType html setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType markdown setlocal expandtab softtabstop=4 shiftwidth=4
+autocmd FileType javascript setlocal expandtab softtabstop=2 shiftwidth=2
 
 let python_highlight_all = 1
 
