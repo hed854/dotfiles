@@ -78,3 +78,6 @@ set backspace=2
 
 "" elzr/json conceal disable
 let g:vim_json_syntax_conceal = 0
+
+"" webpack reloading
+set backupcopy=yes
