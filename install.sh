@@ -9,7 +9,7 @@ fi
 backup_dir="backup/dotfiles"
 vim_dir="$home_dir/.vim"
 
-git_install()
+git_install_package()
 {
 	install_dir=$(echo $1 | cut -d'/' -f5-)
 	if [ ! -d "$vim_dir/bundle/$install_dir" ]; then
@@ -21,55 +21,72 @@ git_install()
 	fi
 }
 
-echo "Backup old files"
-mkdir -p ~/$backup_dir
-if [[ -f ~/.vimrc ]]; then
-	mv ~/.vimrc ~/$backup_dir/.vimrc
-fi
-if [[ -f ~/.gitconfig ]]; then
-	mv ~/.gitconfig ~/$backup_dir/.gitconfig
-fi
-if [[ -f ~/.bashrc ]]; then
-	mv ~/.bashrc ~/$backup_dir/.bashrc
-fi
+backup()
+{
+	echo "Backup old files"
+	mkdir -p ~/$backup_dir
+	if [[ -f ~/.vimrc ]]; then
+		mv ~/.vimrc ~/$backup_dir/.vimrc
+	fi
+	if [[ -f ~/.gitconfig ]]; then
+		mv ~/.gitconfig ~/$backup_dir/.gitconfig
+	fi
+	if [[ -f ~/.bashrc ]]; then
+		mv ~/.bashrc ~/$backup_dir/.bashrc
+	fi
+}
 
-echo "Copying .vimrc"
-cp .vimrc ~/.vimrc
-echo "Copying .gitconfig"
-cp .gitconfig ~/.gitconfig
-echo "Copying .bashrc"
-cp .bashrc ~/.bashrc
-echo "Copying diffwrap"
-cp diffwrap.sh ~/diffwrap.sh
+vim_install()
+{
+	echo "Copying .vimrc"
+	cp .vimrc ~/.vimrc
+	if [ ! -d $vim_dir ];then
+		echo "Creating vim basic dirs"
+		mkdir -p $vim_dir/{autoload,bundle}
+	else
+		echo "Vim basic dirs... OK!"
+	fi
+	if [ ! -e "$vim_dir/autoload/pathogen.vim" ]; then
+		echo "Installing Pathogen"
+		cd $vim_dir/autoload
+		wget https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+	else
+		echo "Pathogen... OK!"
+	fi
+	
+	echo "Installing plugins:"
+	git_install_package "https://github.com/jeetsukumaran/vim-filebeagle"
+	git_install_package "https://github.com/itchyny/lightline.vim"
+	git_install_package "https://github.com/octol/vim-cpp-enhanced-highlight"
+	git_install_package "https://github.com/elzr/vim-json"
+	git_install_package "https://github.com/hdima/python-syntax"
+	git_install_package "https://github.com/tpope/vim-markdown"
+	git_install_package "https://github.com/nelstrom/vim-markdown-folding"
+	git_install_package "https://github.com/stephpy/vim-yaml"
+	git_install_package "https://github.com/vim-scripts/nginx.vim"
+	git_install_package "https://github.com/pangloss/vim-javascript"
+	git_install_package "https://github.com/lepture/vim-jinja"
+	git_install_package "https://github.com/mxw/vim-jsx"
+	
+	echo "Installing themes:"
+	git_install_package "https://github.com/vim-scripts/256-grayvim"
+	git_install_package "https://github.com/morhetz/gruvbox"
+	git_install_package "https://github.com/NLKNguyen/papercolor-theme"
+}
 
+bashrc_install()
+{
+	echo "Copying .bashrc"
+	cp .bashrc ~/.bashrc
+}
 
-if [ ! -d $vim_dir ];then
-	echo "Creating vim basic dirs"
-	mkdir -p $vim_dir/{autoload,bundle}
-else
-	echo "Vim basic dirs... OK!"
-fi
-if [ ! -e "$vim_dir/autoload/pathogen.vim" ]; then
-	echo "Installing Pathogen"
-	cd $vim_dir/autoload
-	wget https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-else
-	echo "Pathogen... OK!"
-fi
+git_install()
+{
+	echo "Copying .gitconfig"
+	cp .gitconfig ~/.gitconfig
+}
 
-echo "Installing plugins:"
-git_install "https://github.com/jeetsukumaran/vim-filebeagle"
-git_install "https://github.com/itchyny/lightline.vim"
-git_install "https://github.com/octol/vim-cpp-enhanced-highlight"
-git_install "https://github.com/elzr/vim-json"
-git_install "https://github.com/hdima/python-syntax"
-git_install "https://github.com/tpope/vim-markdown"
-git_install "https://github.com/nelstrom/vim-markdown-folding"
-git_install "https://github.com/stephpy/vim-yaml"
-git_install "https://github.com/vim-scripts/nginx.vim"
-git_install "https://github.com/pangloss/vim-javascript"
-git_install "https://github.com/lepture/vim-jinja"
-echo "Installing themes:"
-git_install "https://github.com/vim-scripts/256-grayvim"
-git_install "https://github.com/morhetz/gruvbox"
-git_install "https://github.com/NLKNguyen/papercolor-theme"
+backup
+vim_install
+#bashrc_install
+#git_install $home_dir
