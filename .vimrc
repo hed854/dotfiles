@@ -10,10 +10,13 @@ set hlsearch
 set ignorecase
 set incsearch
 
+" Pathogen
+execute pathogen#infect()
+
 " Colors
 set t_Co=256
 syntax enable
-colorscheme elflord
+colorscheme PaperColor
 set background=dark
 
 " Log mode 
@@ -24,43 +27,30 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %a %H:%M")<CR>
 nnoremap <space>n :bn<CR>
 nnoremap <space>b :bp<CR>
 
-" Writing mode
-func! WritingMode() 
-	setlocal lbr
-	map j gj
-	map k gk
-	setlocal wrap 
-	syntax off
-	"set synmaxcol=100
-	"set lazyredraw
-	"set filetype=markdown
-	colorscheme 256-grayvim
-	set foldcolumn=2
-	set nonu
-endfu 
-com! WM call WritingMode()
-
-" Pathogen
-execute pathogen#infect()
-
 " Lightline
 set laststatus=2
 
 " Markdown folding
 function! MarkdownLevel()
-if getline(v:lnum) =~ '^# .*$'
-return ">1"
-endif
-if getline(v:lnum) =~ '^## .*$'
-return ">2"
-endif
-if getline(v:lnum) =~ '^### .*$'
-return ">3"
-endif
-return "=" 
+	if getline(v:lnum) =~ '^# .*$'
+		return ">1"
+	endif
+	if getline(v:lnum) =~ '^## .*$'
+		return ">2"
+	endif
+	if getline(v:lnum) =~ '^### .*$'
+		return ">3"
+	endif
+	return "=" 
 endfunction
 au BufEnter *.markdown setlocal foldexpr=MarkdownLevel()  
 au BufEnter *.markdown setlocal foldmethod=expr
+
+" Markdown filetype
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Ngnix filetype
+autocmd BufNewFile,BufreadPost /etc/nginx/*,/usr/local/nginx/conf/* set filetype=nginx
 
 "" Ftplugin
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -71,6 +61,9 @@ autocmd FileType cpp setlocal noexpandtab tabstop=4 shiftwidth=4
 autocmd FileType json setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType python setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType html setlocal expandtab softtabstop=4 shiftwidth=4
+autocmd FileType markdown setlocal expandtab softtabstop=4 shiftwidth=4
+autocmd FileType javascript setlocal expandtab softtabstop=2 shiftwidth=2
+
 let python_highlight_all = 1
 
 "" Tab switch
@@ -85,3 +78,6 @@ set backspace=2
 
 "" elzr/json conceal disable
 let g:vim_json_syntax_conceal = 0
+
+"" webpack reloading
+set backupcopy=yes
