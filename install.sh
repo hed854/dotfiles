@@ -6,10 +6,7 @@ if [ -z $1 ];then
 else
 	home_dir=$1
 fi
-backup_dir="backup/dotfiles"
-vim_dir="$home_dir/.vim"
-
-git_install_package()
+backup_dir="backup/dotfiles" vim_dir="$home_dir/.vim" git_install_package()
 {
 	install_dir=$(echo $1 | cut -d'/' -f5-)
 	if [ ! -d "$vim_dir/bundle/$install_dir" ]; then
@@ -88,5 +85,5 @@ git_install()
 
 backup
 vim_install
-#bashrc_install
-#git_install $home_dir
+bashrc_install
+git_install $home_dir
