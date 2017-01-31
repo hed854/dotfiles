@@ -6,13 +6,18 @@ if [ -z $1 ];then
 else
 	home_dir=$1
 fi
-backup_dir="backup/dotfiles" vim_dir="$home_dir/.vim" git_install_package()
+
+backup_dir="backup/dotfiles"
+vim_dir="$home_dir/.vim"
+
+git_install_package()
 {
 	install_dir=$(echo $1 | cut -d'/' -f5-)
 	if [ ! -d "$vim_dir/bundle/$install_dir" ]; then
  		echo "Installing $install_dir"
  		cd $vim_dir/bundle
  		git clone $1
+		cd -
 	else
 		echo "  - $install_dir... OK!"
 	fi
@@ -47,6 +52,7 @@ vim_install()
 		echo "Installing Pathogen"
 		cd $vim_dir/autoload
 		wget https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+		cd -
 	else
 		echo "Pathogen... OK!"
 	fi
