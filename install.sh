@@ -26,22 +26,22 @@ git_install_package()
 backup()
 {
 	echo "Backup old files"
-	mkdir -p ~/$backup_dir
-	if [[ -f ~/.vimrc ]]; then
-		mv ~/.vimrc ~/$backup_dir/.vimrc
+	mkdir -p $home_dir/$backup_dir
+	if [[ -f $home_dir/.vimrc ]]; then
+		mv $home_dir/.vimrc $home_dir/$backup_dir/.vimrc
 	fi
-	if [[ -f ~/.gitconfig ]]; then
-		mv ~/.gitconfig ~/$backup_dir/.gitconfig
+	if [[ -f $home_dir/.gitconfig ]]; then
+		mv $home_dir/.gitconfig $home_dir/$backup_dir/.gitconfig
 	fi
-	if [[ -f ~/.bashrc ]]; then
-		mv ~/.bashrc ~/$backup_dir/.bashrc
+	if [[ -f $home_dir/.bashrc ]]; then
+		mv $home_dir/.bashrc $home_dir/$backup_dir/.bashrc
 	fi
 }
 
 vim_install()
 {
 	echo "Copying .vimrc"
-	cp .vimrc ~/.vimrc
+	cp .vimrc $home_dir/.vimrc
 	if [ ! -d $vim_dir ];then
 		echo "Creating vim basic dirs"
 		mkdir -p $vim_dir/{autoload,bundle}
@@ -70,6 +70,7 @@ vim_install()
 	git_install_package "https://github.com/pangloss/vim-javascript"
 	git_install_package "https://github.com/lepture/vim-jinja"
 	git_install_package "https://github.com/mxw/vim-jsx"
+	git_install_package "https://github.com/davidhalter/jedi-vim"
 	
 	echo "Installing themes:"
 	git_install_package "https://github.com/vim-scripts/256-grayvim"
@@ -80,13 +81,13 @@ vim_install()
 bashrc_install()
 {
 	echo "Copying .bashrc"
-	cp .bashrc ~/.bashrc
+	cp .bashrc $home_dir/.bashrc
 }
 
 git_install()
 {
 	echo "Copying .gitconfig"
-	cp .gitconfig ~/.gitconfig
+	cp .gitconfig $home_dir/.gitconfig
 }
 
 backup
