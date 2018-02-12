@@ -72,6 +72,17 @@ nnoremap tn :tabnext<CR>
 nnoremap tb :tabprevious<CR>
 nnoremap tt :tabnew<CR>
 
+"" leader remap
+let mapleader = " "
+
+"" center search
+nnoremap n nzz
+nnoremap N Nzz
+
+"" sort visual selection
+vnoremap <leader>s :sort u<cr>
+vnoremap <leader>S :sort! u<cr>
+
 "" Gvim
 set guifont=Droid_Sans_Mono:h10:cANSI
 set backspace=2
