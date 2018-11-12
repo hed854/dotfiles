@@ -46,6 +46,11 @@ endfunction
 au BufEnter *.markdown setlocal foldexpr=MarkdownLevel()  
 au BufEnter *.markdown setlocal foldmethod=expr
 
+" Lint jenkinsfile
+:command Jenkinslint :!http --form POST http://jenkins.devnvm-z420.it.local.francemm.com/pipeline-model-converter/validate jenkinsfile=@%
+
+
+
 " Markdown filetype
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 

@@ -68,6 +68,7 @@ vim_install()
 	git_install_package "https://github.com/stephpy/vim-yaml"
 	git_install_package "https://github.com/vim-scripts/nginx.vim"
 	git_install_package "https://github.com/pangloss/vim-javascript"
+	git_install_package "https://github.com/martinda/Jenkinsfile-vim-syntax"
 	git_install_package "https://github.com/lepture/vim-jinja"
 	git_install_package "https://github.com/mxw/vim-jsx"
 	git_install_package "https://github.com/tpope/vim-surround"
