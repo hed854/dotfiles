@@ -62,7 +62,7 @@ vim_install()
 	git_install_package "https://github.com/itchyny/lightline.vim"
 	git_install_package "https://github.com/octol/vim-cpp-enhanced-highlight"
 	git_install_package "https://github.com/elzr/vim-json"
-	git_install_package "https://github.com/hdima/python-syntax"
+	git_install_package "https://github.com/vim-python/python-syntax"
 	git_install_package "https://github.com/tpope/vim-markdown"
 	git_install_package "https://github.com/nelstrom/vim-markdown-folding"
 	git_install_package "https://github.com/stephpy/vim-yaml"
