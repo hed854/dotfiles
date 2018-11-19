@@ -75,7 +75,8 @@ vim_install()
 	git_install_package "https://github.com/airblade/vim-gitgutter"
 	git_install_package "https://github.com/nvie/vim-flake8"
 	git_install_package "https://github.com/luochen1990/rainbow.git"
-
+	git_install_package "https://github.com/fatih/vim-go"
+	git_install_package "https://github.com/hashivim/vim-terraform"
 	
 	echo "Installing themes:"
 	git_install_package "https://github.com/vim-scripts/256-grayvim"
