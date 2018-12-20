@@ -71,6 +71,8 @@ autocmd FileType javascript setlocal expandtab softtabstop=2 shiftwidth=2
 
 let python_highlight_all = 1
 
+let g:terraform_align=1
+
 "" Tab switch
 nnoremap td :tabclose<CR>
 nnoremap tn :tabnext<CR>
