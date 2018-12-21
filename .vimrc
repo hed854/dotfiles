@@ -4,6 +4,7 @@ set ruler
 set nu
 set relativenumber
 filetype plugin indent on
+let mapleader="\<Space>"
 
 " Searching
 set hlsearch
@@ -24,8 +25,8 @@ nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %H:%M")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %H:%M")<CR>
 
 " Buffer Switch
-nnoremap <space>n :bn<CR>
-nnoremap <space>b :bp<CR>
+nnoremap <leader>n :bn<CR>
+nnoremap <leader>b :bp<CR>
 
 " Lightline
 set laststatus=2
@@ -68,6 +69,7 @@ autocmd FileType python setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType html setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType markdown setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType javascript setlocal expandtab softtabstop=2 shiftwidth=2
+autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 let python_highlight_all = 1
 
@@ -103,3 +105,8 @@ let g:rainbow_active = 0
 "" webpack reloading
 set backupcopy=yes
 set noswapfile
+
+"" vim-go config
+let g:go_highlight_types = 1
+autocmd FileType go nmap <leader>e  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
