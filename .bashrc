@@ -1,10 +1,8 @@
 # directory options
-export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
 
-# alias
-alias ll='ls $LS_OPTIONS -l'
-alias svnvdiff='svn diff --diff-cmd ~/diffwrap.sh'
+# keyboard
+setxkbmap fr
 
 # Fancy colors
 GREEN="\[\033[0;32m\]"
@@ -49,3 +47,11 @@ function set_prompt()
 }
 
 PROMPT_COMMAND=set_prompt
+
+# always source the dotfiles bash_aliases
+source ~/.bash_aliases
+
+# add specific aliases for work
+if [ -f ~/.bash_aliases_work ]; then
+	source ~/.bash_aliases_work
+fi

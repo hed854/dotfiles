@@ -88,6 +88,8 @@ bashrc_install()
 {
 	echo "Copying .bashrc"
 	cp .bashrc $home_dir/.bashrc
+	echo "Copying .bash_aliases"
+	cp .bash_aliases $home_dir/.bash_aliases
 }
 
 git_install()
