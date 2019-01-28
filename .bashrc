@@ -51,6 +51,11 @@ PROMPT_COMMAND=set_prompt
 # always source the dotfiles bash_aliases
 source ~/.bash_aliases
 
+# add specific aliases for docker based utilities
+if [ -f ~/.bash_aliases_docker ]; then
+	source ~/.bash_aliases_docker
+fi
+
 # add specific aliases for work
 if [ -f ~/.bash_aliases_work ]; then
 	source ~/.bash_aliases_work
