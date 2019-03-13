@@ -110,3 +110,7 @@ set noswapfile
 let g:go_highlight_types = 1
 autocmd FileType go nmap <leader>e  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
+
+"" ultisnips config
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsSnippetsDir="~/ultisnips"
