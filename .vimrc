@@ -112,5 +112,7 @@ autocmd FileType go nmap <leader>e  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 
 "" ultisnips config
-let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/ultisnips"
