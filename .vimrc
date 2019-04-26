@@ -48,7 +48,7 @@ au BufEnter *.markdown setlocal foldexpr=MarkdownLevel()
 au BufEnter *.markdown setlocal foldmethod=expr
 
 " Lint jenkinsfile
-:command Jenkinslint :!http --form POST http://jenkins.devnvm-z420.it.local.francemm.com/pipeline-model-converter/validate jenkinsfile=@%
+:command Jenkinslint :!http --form POST http://jenkins.devnvm.private.francemm.com/pipeline-model-converter/validate jenkinsfile=@%
 
 
 
