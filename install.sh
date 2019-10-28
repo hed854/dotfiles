@@ -79,9 +79,9 @@ vim_install()
 	git_install_package "https://github.com/hashivim/vim-terraform"
 	
 	echo "Installing themes:"
-	git_install_package "https://github.com/vim-scripts/256-grayvim"
 	git_install_package "https://github.com/morhetz/gruvbox"
 	git_install_package "https://github.com/NLKNguyen/papercolor-theme"
+	git_install_package "https://github.com/fcpg/vim-orbital"
 }
 
 bashrc_install()
