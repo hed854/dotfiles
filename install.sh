@@ -70,7 +70,7 @@ vim_install()
 	else
 		echo "Pathogen... OK!"
 	fi
-	
+
 	echo "Installing plugins:"
 	git_install_package "https://github.com/jeetsukumaran/vim-filebeagle"
 	git_install_package "https://github.com/itchyny/lightline.vim"
@@ -84,14 +84,13 @@ vim_install()
 	git_install_package "https://github.com/pangloss/vim-javascript"
 	git_install_package "https://github.com/martinda/Jenkinsfile-vim-syntax"
 	git_install_package "https://github.com/lepture/vim-jinja"
-	git_install_package "https://github.com/mxw/vim-jsx"
-	git_install_package "https://github.com/tpope/vim-surround"
 	git_install_package "https://github.com/airblade/vim-gitgutter"
 	git_install_package "https://github.com/nvie/vim-flake8"
 	git_install_package "https://github.com/luochen1990/rainbow.git"
 	git_install_package "https://github.com/fatih/vim-go"
 	git_install_package "https://github.com/hashivim/vim-terraform"
-	
+	git_install_package "https://github.com/ntpeters/vim-better-whitespace.git"
+
 	echo "Installing themes:"
 	git_install_package "https://github.com/morhetz/gruvbox"
 	git_install_package "https://github.com/NLKNguyen/papercolor-theme"

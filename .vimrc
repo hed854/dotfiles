@@ -20,7 +20,7 @@ syntax enable
 colorscheme PaperColor
 set background=dark
 
-" Log mode 
+" Log mode
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %H:%M")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %H:%M")<CR>
 
@@ -42,9 +42,9 @@ function! MarkdownLevel()
 	if getline(v:lnum) =~ '^### .*$'
 		return ">3"
 	endif
-	return "=" 
+	return "="
 endfunction
-au BufEnter *.markdown setlocal foldexpr=MarkdownLevel()  
+au BufEnter *.markdown setlocal foldexpr=MarkdownLevel()
 au BufEnter *.markdown setlocal foldmethod=expr
 
 " Lint jenkinsfile
@@ -105,6 +105,9 @@ let g:rainbow_active = 0
 "" webpack reloading
 set backupcopy=yes
 set noswapfile
+
+"" whitespace on save
+let g:better_whitespace_enabled=1
 
 "" vim-go config
 let g:go_highlight_types = 1

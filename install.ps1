@@ -15,12 +15,12 @@ function Zip-Install
 		Write-Host "Installing $url"
 
 		# Download
-		$client = new-object System.Net.WebClient 
+		$client = new-object System.Net.WebClient
 		$client.DownloadFile("$url/archive/master.zip", "$bundle_dir/master.zip")
-	
+
 		# Unzip
 		& $7z_exe x $bundle_dir/master.zip "-o$bundle_dir/" -y
-	
+
 		# Delete master.zip
 		Remove-Item $bundle_dir/master.zip
 	}
@@ -58,7 +58,7 @@ else
 {
 	Write-Host "Installing Pathogen"
 	# Invoke-WebRequest/wget is not available in powershell 2.0 (Windows 7)
-	$client = new-object System.Net.WebClient 
+	$client = new-object System.Net.WebClient
 	# The second argument must be a filename
 	$client.DownloadFile("https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim", "$vim_autoload_dir/pathogen.vim")
 

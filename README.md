@@ -29,7 +29,7 @@
 `kb_type` accepted values:
 
 * `iso_tkl` (default): small factor ISO AZERTY keyboard (no numpad)
-* `ansi`: any factor ANSI keyboard (large left shift) 
+* `ansi`: any factor ANSI keyboard (large left shift)
 
 **Windows**
 
