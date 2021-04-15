@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# prerequisites: git, wget
 # Parameter: home dir (mandatory)
 if [ -z $1 ];then
 	echo "You must specify your home dir"

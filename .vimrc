@@ -48,7 +48,7 @@ au BufEnter *.markdown setlocal foldexpr=MarkdownLevel()
 au BufEnter *.markdown setlocal foldmethod=expr
 
 " Lint jenkinsfile
-:command Jenkinslint :!http --form POST http://jenkins.devnvm.private.francemm.com/pipeline-model-converter/validate jenkinsfile=@%
+:command Jenkinslint :!http --form POST http://spacekins.local.com/pipeline-model-converter/validate jenkinsfile=@%
 
 
 
@@ -111,5 +111,6 @@ let g:better_whitespace_enabled=1
 
 "" vim-go config
 let g:go_highlight_types = 1
-autocmd FileType go nmap <leader>e  <Plug>(go-build)
+autocmd FileType go nmap <leader>e  :make %
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
