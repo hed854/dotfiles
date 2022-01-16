@@ -91,6 +91,8 @@ vim_install()
 	git_install_package "https://github.com/fatih/vim-go"
 	git_install_package "https://github.com/hashivim/vim-terraform"
 	git_install_package "https://github.com/ntpeters/vim-better-whitespace.git"
+	git_install_package "https://github.com/tomlion/vim-solidity"
+	git_install_package "https://github.com/hed854/vim-vtc"
 
 	echo "Installing themes:"
 	git_install_package "https://github.com/morhetz/gruvbox"
