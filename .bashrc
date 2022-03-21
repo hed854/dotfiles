@@ -12,7 +12,7 @@ CYAN="\[\033[0;36m\]"
 GRAY="\[\033[0;37m\]"
 
 # get current branch in git repo
-function parse_git_branch() 
+function parse_git_branch()
 {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! "${BRANCH}" == "" ]
@@ -29,7 +29,7 @@ function parse_git_branch()
 }
 
 # get current status of git repo
-function parse_git_dirty() 
+function parse_git_dirty()
 {
 	status=`git status 2>&1 | tee`
 	dirty=`echo -n "${status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
@@ -41,9 +41,23 @@ function parse_git_dirty()
 	fi
 }
 
+function parse_terraform_workspace()
+{
+	if [ -d .terraform ]; then
+		workspace=$(terraform workspace show 2>/dev/null)
+		if [[ $workspace == "prod"* ]] || [[ $workspace == "PROD"* ]]; then
+			echo -n "${RED}(TF:${workspace})${RESET}"
+		elif [[ $workspace == "test"* ]] || [[ $workspace == "test"* ]]; then
+			echo -n "${CYAN}(TF:${workspace})${RESET}"
+		else
+			echo -n "${GRAY}(TF:${workspace})${GRAY}"
+		fi
+	fi
+}
+
 function set_prompt()
 {
-	PS1="${GREEN}[\u@\h:\W]${RESET}$(parse_git_branch)${GREEN}\$${RESET} "
+	PS1="${GREEN}[\u@\h:\W]${RESET}$(parse_git_branch)$(parse_terraform_workspace)${GREEN}\$${RESET} "
 }
 
 PROMPT_COMMAND=set_prompt
