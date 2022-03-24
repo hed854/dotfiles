@@ -1,6 +1,6 @@
 [alias]
 	st = status -s
-	lg = log --oneline --decorate -n 10
+	lg = log --oneline --decorate --date-order --pretty=format:'%Cred%h%Creset (%cs) (%cN) %s %Cgreen%d%Creset' -n 10
 [color]
 	ui = auto
 [core]
