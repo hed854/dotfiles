@@ -70,6 +70,7 @@ autocmd FileType html setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType markdown setlocal expandtab softtabstop=4 shiftwidth=4
 autocmd FileType javascript setlocal expandtab softtabstop=2 shiftwidth=2
 autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd FileType yaml setlocal noexpandtab tabstop=2 shiftwidth=2
 
 let python_highlight_all = 1
 

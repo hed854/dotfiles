@@ -41,6 +41,13 @@ function parse_git_dirty()
 	fi
 }
 
+function parse_kube_ctx() {
+	if [ -f .kube/config ]; then
+	    # todo
+	    
+	fi
+}
+
 function parse_terraform_workspace()
 {
 	if [ -d .terraform ]; then
