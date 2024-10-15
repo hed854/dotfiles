@@ -11,14 +11,13 @@ fi
 echo "Set home dir: $home_dir"
 
 backup_dir="backup/dotfiles"
-vim_dir="$home_dir/.vim"
 
 git_install_package()
 {
 	install_dir=$(echo $1 | cut -d'/' -f5-)
-	if [ ! -d "$vim_dir/bundle/$install_dir" ]; then
+	if [ ! -d "~/.vim/bundle/$install_dir" ]; then
  		echo "Installing $install_dir"
- 		cd $vim_dir/bundle
+ 		cd ~/.vim/bundle
  		git clone $1
 		cd -
 	else
@@ -45,17 +44,15 @@ vim_install()
 {
 	echo "Copying .vimrc"
 	cp .vimrc $home_dir/.vimrc
-	if [ ! -d $vim_dir ];then
+	if [ ! -d ~/.vim ];then
 		echo "Creating vim basic dirs"
-		mkdir -p $vim_dir/{autoload,bundle}
+		mkdir -p ~/.vim/autoload ~/.vim/bundle
 	else
 		echo "Vim basic dirs... OK!"
 	fi
-	if [ ! -e "$vim_dir/autoload/pathogen.vim" ]; then
+	if [ ! -e "~/.vim/autoload/pathogen.vim" ]; then
 		echo "Installing Pathogen"
-		cd $vim_dir/autoload
-		wget https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-		cd -
+		curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 	else
 		echo "Pathogen... OK!"
 	fi
